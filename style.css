@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.container {
+    width: 85%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 350px 300px;
+    row-gap: 10%;
+    margin: 0 auto;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(102, 192, 206);
+    border-radius: 20px;
+    padding: 1.5rem 3rem;
+    grid-column: 1 / -1;
+    /* height: 20%; */
+}
+
+.app-name {
+    font-size: 2rem;
+}
+
+.app-name a:link {
+    text-decoration: none;
+}
+
+.select-year-month {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.genre {
+    /* grid-column: 1/2;
+    grid-row: 2/3; */
+
+    /*row-start / column start  / row end / column end */
+
+    grid-area: 2/ 1 / 2/ 2;
+    justify-items: start;
+    align-self: end;
+}
+
+.genre ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.genre li {
+    font-size: 2rem;
+    border-bottom: 1px solid #000;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.genre a:link {
+    text-decoration: none;
+}

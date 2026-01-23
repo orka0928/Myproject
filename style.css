@@ -54,10 +54,8 @@ html {
     grid-row: 2/3; */
 
     /*row-start / column start  / row end / column end */
-
-    grid-area: 2/ 1 / 2/ 2;
     justify-items: start;
-    align-self: end;
+    align-self: center;
 }
 
 .genre ul {
@@ -66,13 +64,24 @@ html {
     text-align: center;
 }
 
-.genre li {
-    font-size: 2rem;
+.genre li a {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
     border-bottom: 1px solid #000;
     padding-top: 5px;
     padding-bottom: 10px;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+}
+.genre li a:link,
+.genre li a:visited {
+    color: #000;
 }
 
-.genre a:link {
-    text-decoration: none;
+.icon {
+    /* margin-top: 10px; */
+    width: 2rem;
+    height: 2rem;
 }

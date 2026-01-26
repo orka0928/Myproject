@@ -1,7 +1,13 @@
+/* コード規約 
+1, displayを先頭
+2, align-item, justyfy-content,gapなどflex関連を続ける
+3, width,heightなどbox-sizeに関するもの
+ */
+
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
 }
 
@@ -9,33 +15,39 @@ html {
     width: 100%;
     height: 100%;
     font-size: 16px;
+    color: #343a40;
 }
-
-.container {
-    width: 85%;
+body {
+    /* background-color: #ebfbeee4; */
+    width: 100%;
     height: 100%;
+}
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 350px 300px;
-    row-gap: 10%;
+    grid-template-rows: 78px 450px 1fr;
+    justify-content: center;
+    row-gap: 7%;
+    width: 85%;
+    height: 100%;
     margin: 0 auto;
-    /* display: flex; */
-    /* flex-direction: column; */
 }
 
 .main-header {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    background-color: rgb(102, 192, 206);
-    border-radius: 20px;
-    padding: 1.5rem 3rem;
     grid-column: 1 / -1;
+    /* justify-content: space-between; */
+    background-color: #66efe6ea;
+    border-radius: 16px;
+    padding: 16px 48px;
     /* height: 20%; */
 }
 
 .app-name {
-    font-size: 2rem;
+    grid-column: 1/2;
+    font-size: 32px;
 }
 
 .app-name a:link {
@@ -43,45 +55,128 @@ html {
 }
 
 .select-year-month {
-    grid-column: 3/4;
     display: flex;
     justify-content: space-evenly;
-    gap: 1rem;
+    grid-column: 3/4;
+    gap: 16px;
 }
-
+.select-year-month select,
+.select-year-month button {
+    padding: 3.2px 6.4px;
+    font-size: 16px;
+}
 .genre {
-    /* grid-column: 1/2;
-    grid-row: 2/3; */
-
-    /*row-start / column start  / row end / column end */
     justify-items: start;
-    align-self: center;
+    align-self: start;
+    width: max-content;
+    box-shadow: 0 2px 3px 0.3px rgba(0, 0, 0, 0.05);
 }
 
 .genre ul {
-    list-style: none;
     padding: 0;
-    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
 
+.genre li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 3px 3px 0.01px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 20px 16px;
+    list-style: none;
+    background-color: #fdfdfd;
+    /* border: 2px solid #000; */
+}
+
+.genre li:last-child {
+    margin-bottom: 0;
+}
 .genre li a {
     display: flex;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-bottom: 1px solid #000;
-    padding-top: 5px;
-    padding-bottom: 10px;
-    gap: 10px;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     text-decoration: none;
 }
 .genre li a:link,
 .genre li a:visited {
-    color: #000;
+    color: #343a40;
+}
+.genre li:hover {
+    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.genre li:active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.genre li a:active {
+    color: #868e96;
+}
+/* .genre div li:hover {
+    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.genre div li:active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.genre div li a:active {
+    color: #868e96;
+} */
+.genre li .icon {
+    width: 32px;
+    height: 32px;
+}
+.genre div {
+    margin: 0 16px;
+}
+.genre div li {
+    margin-bottom: 6px;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
-.icon {
-    /* margin-top: 10px; */
-    width: 2rem;
-    height: 2rem;
+.pie-chart,
+.circle {
+    height: 100%;
+}
+.pie-chart {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: start;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+.table-box {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+.table-box button {
+    padding: 5px 10px;
+    align-self: flex-end;
+    width: fit-content;
+}
+table {
+    justify-items: center;
+    align-self: start;
+    width: 100%;
+    text-align: center;
+    table-layout: fixed;
+}
+th,
+td {
+    border: solid 1px black;
+}
+th {
+    height: 10px;
+    padding: 5px;
+}
+td {
+    height: 100px;
 }

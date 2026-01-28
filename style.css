@@ -26,8 +26,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 78px 450px 1fr;
-    justify-content: center;
     row-gap: 7%;
+    justify-content: center;
     width: 85%;
     height: 100%;
     margin: 0 auto;
@@ -35,10 +35,10 @@ body {
 
 .main-header {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
     grid-column: 1 / -1;
-    /* justify-content: space-between; */
+    column-gap: 100px;
+    align-items: center;
     background-color: #66efe6ea;
     border-radius: 16px;
     padding: 16px 48px;
@@ -50,91 +50,78 @@ body {
     font-size: 32px;
 }
 
-.app-name a:link {
+.app-name a {
     text-decoration: none;
 }
 
 .select-year-month {
+    justify-items: center;
     display: flex;
     justify-content: space-evenly;
     grid-column: 3/4;
-    gap: 16px;
 }
 .select-year-month select,
 .select-year-month button {
     padding: 3.2px 6.4px;
     font-size: 16px;
 }
-.genre {
-    justify-items: start;
-    align-self: start;
+.genre-nav {
     width: max-content;
-    box-shadow: 0 2px 3px 0.3px rgba(0, 0, 0, 0.05);
 }
 
-.genre ul {
-    padding: 0;
+.genre-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     font-size: 24px;
     font-weight: bold;
 }
 
-.genre li {
+.genre {
     display: flex;
     align-items: center;
     gap: 20px;
     box-shadow: 0 3px 3px 0.01px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 5px;
+    border-radius: 10px;
     padding: 20px 16px;
     list-style: none;
     background-color: #fdfdfd;
-    /* border: 2px solid #000; */
 }
 
-.genre li:last-child {
-    margin-bottom: 0;
-}
-.genre li a {
+.genre a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 20px;
     text-decoration: none;
-}
-.genre li a:link,
-.genre li a:visited {
     color: #343a40;
 }
-.genre li:hover {
+.genre:hover,
+.genre div li:hover {
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
-.genre li:active {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-}
-.genre li a:active {
-    color: #868e96;
-}
-/* .genre div li:hover {
-    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
-}
+.genre:active,
 .genre div li:active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
-.genre div li a:active {
+.genre a:active {
     color: #868e96;
-} */
-.genre li .icon {
+}
+.icon {
     width: 32px;
     height: 32px;
 }
-.genre div {
+.genre div ul {
+    list-style: none;
     margin: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 .genre div li {
-    margin-bottom: 6px;
     padding: 6px 12px;
-    border-radius: 10px;
     font-size: 16px;
+    box-shadow: 0 3px 3px 0.01px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .pie-chart,
@@ -158,8 +145,8 @@ body {
     grid-row: 3/4;
 }
 .table-box button {
-    padding: 5px 10px;
     align-self: flex-end;
+    padding: 5px 10px;
     width: fit-content;
 }
 table {
@@ -179,4 +166,31 @@ th {
 }
 td {
     height: 100px;
+}
+.button-month img {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    box-shadow: 0 4px 2px 2px rgb(0, 0, 0, 0.3);
+}
+.button-month {
+    display: flex;
+    grid-column: 2/3;
+    align-items: center;
+    justify-content: space-between;
+}
+.button-month p {
+    font-size: 36px;
+}
+
+.button-month button {
+    background: none;
+    border: none;
+}
+.button-month img:hover,
+.button-month img:active {
+    cursor: pointer;
+}
+.button-month img:active {
+    box-shadow: 0 0 0 1px rgb(0, 0, 0, 0.2);
 }

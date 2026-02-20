@@ -155,13 +155,17 @@ body {
             border-radius: 1rem;
         }
     }
+
     &--li,
     &--sub li {
+        transition: all 0.25s;
         &:hover {
             box-shadow: 0 0.2rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+            transform: translateY(-0.2rem);
         }
         &:active {
             box-shadow: 2px 1px 3px inset;
+            transform: translateY(0.15rem);
         }
     }
     &__icon {

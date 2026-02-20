@@ -3,8 +3,10 @@
 2, align-item, justyfy-content,gapなどflex関連を続ける
 3, width,heightなどbox-sizeに関するもの
  */
+@use "./query.css";
 
 $main-color: #63e6be;
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -203,11 +205,11 @@ body {
     }
 }
 
-.pie-chart,
-.circle {
-    height: 100%;
-    width: 100%;
-}
+// .pie-chart,
+// .circle {
+//     height: 100%;
+//     width: 100%;
+// }
 .pie-chart {
     grid-column: 2/3;
     grid-row: 2/3;

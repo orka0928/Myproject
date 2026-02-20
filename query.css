@@ -2,20 +2,20 @@
     .header {
         grid-template-rows: 1fr auto;
     }
-    .button-month {
+    .header__btn--month {
         grid-column: 2/3;
         grid-row: 2/3;
         justify-self: center;
         display: flex;
         justify-content: space-between;
     }
-    .select-year-month {
+    .header__select {
         padding: 1rem;
         grid-column: 2/4;
         justify-self: end;
     }
-    .select-year-month select,
-    .select-year-month button {
+    .selector,
+    .header__select-btn {
         max-height: fit-content;
         max-width: fit-content;
         /* font-size: small; */
@@ -27,19 +27,19 @@
         grid-template-columns: 1fr max-content 1fr;
         grid-template-rows: repeat(3, 1fr);
     }
-    .app-name,
-    .button-month,
-    .select-year-month {
+    .header__app-name,
+    .header__btn--month,
+    .header__select {
         grid-column: 2/3;
     }
-    .app-name {
+    .header__app-name {
         grid-row: 1/2;
         justify-self: center;
     }
-    .button-month {
+    .header__btn--month {
         grid-row: 3/4;
     }
-    .select-year-month {
+    .header__select {
         justify-self: center;
         grid-row: 2/3;
     }
@@ -49,29 +49,28 @@
     .container {
         grid-template-rows: repeat(5, auto);
     }
-    .genre-nav {
+    .list--genre {
         display: flex;
         align-items: center;
         grid-column: 1 /-1;
         grid-row: 2/3;
-        width: 100%;
-        min-height: 10rem;
-        margin-top: 2rem;
-        padding: 1rem;
+        max-width: 100%;
+        min-height: 15rem;
         overflow-x: auto;
         overflow-y: hidden;
     }
-    .genre-list {
+    .list--genre--ul {
         display: flex;
+        align-items: center;
         flex-direction: row;
-        height: 10rem;
         gap: 2rem;
     }
-    .genre {
-        height: fit-content;
+    .list--genre--li {
+        height: max-content;
         flex-shrink: 0;
     }
-    .detail-box {
+
+    .box__detail {
         grid-column: 1 /-1;
         grid-row: 3/4;
         display: flex;
@@ -82,7 +81,7 @@
         grid-column: 1 /-1;
         grid-row: 4/5;
     }
-    .table-box {
+    .box__table {
         grid-column: 1 /-1;
         grid-row: 5/6;
     }
@@ -91,7 +90,7 @@
     .container {
         row-gap: 2rem;
     }
-    .detail-box {
+    .box__detail {
         flex-direction: column;
     }
 }

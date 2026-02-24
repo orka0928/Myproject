@@ -23,24 +23,40 @@ document.querySelector(".dif").textContent = dif;
 document.querySelector(".header__month").textContent = `${curMonth}月`;
 
 const nextMonth = document.querySelector(".header__btn--next");
-
-nextMonth.addEventListener("click", () => {
-    let nxtMon = (curMonth += 1);
-    if (nxtMon === 13) {
-        nxtMon = 1;
-    }
-    curMonth = nxtMon;
-    document.querySelector(".header__month").textContent = `${curMonth}月`;
-});
 const prevMonth = document.querySelector(".header__btn--prev");
 
-prevMonth.addEventListener("click", () => {
-    let prvMon = (curMonth -= 1);
-    if (prvMon === 0) {
-        prvMon = 12;
+// const moveMonth = function (query) {
+//     let month = curMonth;
+//     if (query === nextMonth) {
+//         month += 1;
+//         if (month >= 13) {
+//             month = 1;
+//         }
+//     } else if (query === prevMonth) {
+//         month -= 1;
+//         if (month <= 0) {
+//             month = 12;
+//         }
+//     }
+//     curMonth = month;
+//     document.querySelector(".header__month").textContent = `${curMonth}月`;
+// };
+
+const moveMonth = function (num) {
+    curMonth += num;
+    if (curMonth > 12) {
+        curMonth = 1;
+    } else if (curMonth < 1) {
+        curMonth = 12;
     }
-    curMonth = prvMon;
     document.querySelector(".header__month").textContent = `${curMonth}月`;
+};
+
+nextMonth.addEventListener("click", () => {
+    moveMonth(1);
+});
+prevMonth.addEventListener("click", () => {
+    moveMonth(-1);
 });
 
 const test = document.querySelector(".list--genre--li");
@@ -51,15 +67,6 @@ test.addEventListener("mouseover", function () {
 test.addEventListener("mouseleave", function () {
     display.classList.add("hidden");
 });
-
-// const buttonTest = document.querySelector(".header__btn--prev");
-// buttonTest.addEventListener("click", function () {
-//     alert("6月");
-// });
-// const buttonTest2 = document.querySelector(".header__btn--next");
-// buttonTest2.addEventListener("click", function () {
-//     alert("8月");
-// });
 
 const addGenreBtn = document.querySelector(".add-genre");
 addGenreBtn.addEventListener("click", function () {

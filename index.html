@@ -112,11 +112,6 @@
                         </ul>
                     </div>
                 </li>
-                <li class="list--genre--li">test</li>
-                <li class="list--genre--li">test</li>
-                <li class="list--genre--li">test</li>
-                <li class="list--genre--li">test</li>
-                <li class="list--genre--li">test</li>
                 <li class="list--genre--li add-genre">ジャンルを追加する
                     <button class="add-genre__btn"><svg class="list--genre__icon add-genre__icon"
                             xmlns="http://www.w3.org/2000/svg"
@@ -125,10 +120,21 @@
                                 d="M352 128C352 110.3 337.7 96 320 96C302.3 96 288 110.3 288 128L288 288L128 288C110.3 288 96 302.3 96 320C96 337.7 110.3 352 128 352L288 352L288 512C288 529.7 302.3 544 320 544C337.7 544 352 529.7 352 512L352 352L512 352C529.7 352 544 337.7 544 320C544 302.3 529.7 288 512 288L352 288L352 128z" />
                         </svg>
                     </button>
+
                 </li>
             </ul>
         </nav>
-
+        <div class="modal modal-hidden">
+            <div class="modal__container">
+                <div class="modal__box">
+                    <button class="modal-close">&times;</button>
+                    <div class="modal__input-box">
+                        <input class="modal__input" type="text" placeholder="ジャンルを入力してください">
+                        <button class="btn__genre-add" type="button">追加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="pie-chart">
             <svg class="circle" viewBox="0 4 40 40  ">
                 <circle class="pie" cx="50%" cy="50%" r="15"></circle><!--一つ目の項目-->

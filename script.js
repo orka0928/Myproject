@@ -16,6 +16,8 @@ let curMonth = new Date().getMonth() + 1;
 const income = sampleData["price"];
 const pay = sampleData2["price"];
 const dif = income - pay;
+const modal = document.querySelector(".modal");
+const clsmodal = document.querySelector(".modal-close");
 
 document.querySelector(".income").textContent = income;
 document.querySelector(".pay").textContent = pay;
@@ -70,7 +72,22 @@ test.addEventListener("mouseleave", function () {
 
 const addGenreBtn = document.querySelector(".add-genre");
 addGenreBtn.addEventListener("click", function () {
-    const newGenre = prompt("あとでモ-ダルに変更");
+    modal.classList.remove("modal-hidden");
+});
+
+clsmodal.addEventListener("click", () => {
+    modal.classList.add("modal-hidden");
+});
+
+const newGenreInput = document.querySelector(".modal__input");
+const addBtn = document.querySelector(".btn__genre-add");
+
+addBtn.addEventListener("click", () => {
+    const newGenre = newGenreInput.value;
     const addGenre = document.querySelector(".add-genre");
+    if (!newGenre) {
+        alert("未入力では追加できません。追加したいジャンルを入力してください");
+        return;
+    }
     addGenre.insertAdjacentHTML("beforebegin", `<li class="list--genre--li">${newGenre}</li>`);
 });
